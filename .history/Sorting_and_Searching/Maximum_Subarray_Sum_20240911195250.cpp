@@ -14,31 +14,15 @@ typedef long long ll;
 int main() {
     int n;
     cin >> n;
-
-    vector <pair<int,int>> events;
+    vector<int> a(n);
     lp(i,n){
-        int start, end;
-        cin >> start >> end;
-        events.push_back({start,end});
+        cin >> a[i];
     }
+    ll best = 01e18;
+    ll past = 0;
 
-    sort(all(events), [](pair<int, int> &a, pair<int, int> &b) {
-        return a.second < b.second;
-    });
-
-    int movies = 0;
-    int lastEndTime = 0;
-    
-    rep(i,events){
-        
-        if(events[i].first >= lastEndTime){
-            movies++;
-            lastEndTime = events[i].second;
-        }
+    lp(i,n){
+        if()
     }
-    
-    cout << movies << ln;
     return 0;
 }
-
-

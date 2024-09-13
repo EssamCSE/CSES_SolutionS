@@ -11,34 +11,21 @@ using namespace std;
 #define ln '\n'
 typedef long long ll;
 
-int main() {
-    int n;
-    cin >> n;
-
-    vector <pair<int,int>> events;
-    lp(i,n){
-        int start, end;
-        cin >> start >> end;
-        events.push_back({start,end});
-    }
-
-    sort(all(events), [](pair<int, int> &a, pair<int, int> &b) {
-        return a.second < b.second;
-    });
-
-    int movies = 0;
-    int lastEndTime = 0;
-    
-    rep(i,events){
-        
-        if(events[i].first >= lastEndTime){
-            movies++;
-            lastEndTime = events[i].second;
-        }
-    }
-    
-    cout << movies << ln;
-    return 0;
+int max_Subarray_Sum(int arr[], int s){
+    if(s==1) return arr[0];
+    int m = m/2;
+    int lss = max_Subarray_Sum(arr, m);
+    int rss = max_Subarray_Sum(arr, m);
 }
 
 
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    lp(i,n){
+        cin >> a[i];
+    }
+    return 0;
+}
